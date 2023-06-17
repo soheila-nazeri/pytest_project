@@ -1,0 +1,21 @@
+python -m pytest
+pytest -v
+
+python -m pytest -m "slow"
+python -m pytest -m "not slow"
+python -m pytest -m "slow and ex"
+
+pip install pytest-html
+
+python -m pytest --html=reports/report.html
+python -m pytest --junitxml=reports/report.xml
+
+pip install coverage
+python -m pytest --cov=pytestproject
+python -m pytest --cov=pytestproject --cov-report html
+python -m pytest --cov=pytestproject --cov-branch --cov-report html
+
+
+pytest-xdist
+python -m pytest -n 4
+python -m pytest -n auto
